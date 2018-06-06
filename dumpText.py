@@ -81,7 +81,7 @@ def main():
 		qa = qa['annotations']
 	
 	pbar = progressbar.ProgressBar()
-	print 'Dumping questions, answers, questionIDs, imageIDs, and questions lengths to text files...'
+	print('Dumping questions, answers, questionIDs, imageIDs, and questions lengths to text files...')
 	for i, q in pbar(zip(xrange(len(ques)),ques)):
 		questions_file.write((q['question'] + '\n').encode('utf8'))
 		questions_lengths_file.write((str(len(nlp(q['question'])))+ '\n').encode('utf8'))
@@ -94,7 +94,7 @@ def main():
 				answers_file.write(getAllAnswer(qa[i]['answers']).encode('utf8'))
 			answers_file.write('\n'.encode('utf8'))
 
-	print 'completed dumping', data_split
+	print('completed dumping', data_split)
 
 if __name__ == "__main__":
 	main()
